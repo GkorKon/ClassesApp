@@ -7,7 +7,9 @@
              xmlns:viewmodels="clr-namespace:ClassesApp.ViewModels"
              x:DataType="viewmodels:ClassViewModel"
              
-             Title="My Class">
+             Title="My Class"
+             
+             BackgroundColor="LightBlue">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="icons8_save_24"
@@ -28,21 +30,20 @@
             <Entry Text="{Binding Item.Id, Mode=TwoWay}"/>
 
             <Label Text="Class picture:" FontAttributes="Bold"/>
-            <Entry Text="{Binding Item.Foto, Mode=TwoWay}"/>
+            <Image Source="{Binding Item.Foto, Mode=TwoWay}"/>
 
             <Label Text="Class name:" FontAttributes="Bold"/>
             <Entry Text="{Binding Item.Name, Mode=TwoWay}"/>
 
             <Label Text="Posoto:" FontAttributes="Bold"/>
-            <Entry Text="{Binding Item.Description, Mode=TwoWay}"/>
+            <Entry Text="{Binding Item.Pososto, Mode=TwoWay}"/>
         </VerticalStackLayout>
 
         <!--Empty Space-->
 
         <VerticalStackLayout 
             Grid.Row="2"
-            Margin="10"
-            BackgroundColor="Aquamarine">
+            Margin="10">
             <Image Margin="5"
                 Source="icons8_save_24"/>
             <Label Margin="5" 
@@ -62,8 +63,6 @@
                 <DataTrigger TargetType="VerticalStackLayout"
                     Binding="{Binding Item.Id}"
                     Value="0">
-                    <Setter Property="BackgroundColor"
-                    Value="LightCoral"/>
                 </DataTrigger>
             </VerticalStackLayout.Triggers>
 

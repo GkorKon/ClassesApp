@@ -63,6 +63,7 @@ public partial class ClassViewModel: ObservableObject
         if (confirm) 
         { 
         Items.Remove(model);
+            Db.Remove(model);
         //todo remove from database
         await Db.SaveChangesAsync();
         }

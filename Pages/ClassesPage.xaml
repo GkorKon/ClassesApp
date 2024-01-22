@@ -7,7 +7,9 @@
              xmlns:viewmodels="clr-namespace:ClassesApp.ViewModels"
              x:DataType="viewmodels:ClassViewModel"
              
-             Title="My Classes">
+             Title="My Classes"
+             
+             BackgroundColor="LightBlue">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" 
@@ -45,13 +47,11 @@
                                        HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center"
                                        Grid.Column="0"
-                                       BackgroundColor="LightGoldenrodYellow"
                                        Margin="5"/>
                                 <Label Text="{Binding Foto}"
                                        HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center"
                                        Grid.Column="1"
-                                       BackgroundColor="PaleVioletRed"
                                        Margin="5"/>
                                 <Label Text="{Binding Name}"
                                        LineBreakMode="WordWrap"
@@ -60,14 +60,12 @@
                                        Grid.Column="2"
                                        FontAttributes="Bold"
                                        FontSize="15"
-                                       BackgroundColor="Brown"
                                        Margin="5"/>
-                                <Label Text="{Binding Description}"
+                                <Label Text="{Binding Pososto}"
                                        HorizontalTextAlignment="End"
                                        VerticalTextAlignment="Center"
                                        Grid.Column="3"
                                        FontSize="20"
-                                       BackgroundColor="BlueViolet"
                                        Margin="5"/>
                             </Grid>
                             <Border.StrokeShape>

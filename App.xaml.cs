@@ -1,4 +1,4 @@
-﻿namespace ClassesApp
+﻿ namespace ClassesApp
 {
     public partial class App : Application
     {

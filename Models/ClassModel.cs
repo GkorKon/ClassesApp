@@ -20,7 +20,7 @@ public partial class ClassModel: ObservableObject
     string name;
 
     [ObservableProperty]
-    string description;
+    int pososto;
 
     [ObservableProperty]
     string foto;
