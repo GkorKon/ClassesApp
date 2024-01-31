@@ -39,9 +39,6 @@ public partial class ClassViewModel: ObservableObject
 
     public ClassViewModel()
     {
-        //todo class viewmodel
-        Debug.WriteLine(nameof(ClassViewModel));
-
         SaveCommand = new RelayCommand(SaveProcess);
         DeleteCommand = new RelayCommand<ClassModel>(DeleteProcess);
         AddCommand = new RelayCommand(AddProcess);
@@ -63,6 +60,7 @@ public partial class ClassViewModel: ObservableObject
         if (confirm) 
         { 
         Items.Remove(model);
+        Db.Remove(model);
         //todo remove from database
         await Db.SaveChangesAsync();
         }
@@ -71,7 +69,6 @@ public partial class ClassViewModel: ObservableObject
 
     private void AddProcess()
     {
-        Debug.WriteLine(nameof(AddProcess));
         isNew = true;
         Item = new();
         Shell.Current.Navigation.PushAsync(new ClassPage(this));
@@ -79,7 +76,6 @@ public partial class ClassViewModel: ObservableObject
 
     private void UpdateProcess(ClassModel model)
     {
-        Debug.WriteLine(nameof(UpdateProcess));
         isNew = false;
         Item = model;
         Shell.Current.Navigation.PushAsync(new ClassPage(this));
@@ -87,7 +83,6 @@ public partial class ClassViewModel: ObservableObject
 
     private async void SaveProcess ()
     {
-        Debug.WriteLine(nameof(SaveProcess));
 
         if (isNew == true)
         {
@@ -109,20 +104,15 @@ public partial class ClassViewModel: ObservableObject
            await Db.SaveChangesAsync();
         }
         await Shell.Current.Navigation.PopAsync();
-        // δεν μπαινει εδω το save γιατι πρωτα πρεπει να αποθηκευτουν οι αλλαγες και μετα να αποθηκευτουν
-
-
     }
 
     protected async Task LoadItems()
     {
-        Debug.WriteLine(nameof(LoadItems));
-
         Items.Clear();
         // todo read from database
 
         List<ClassModel> myList = await Db.Classes
-                                        .OrderBy(x => x.Name)
+                                        .OrderBy(cl => cl.Name)
                                         .ToListAsync();
 
         // query executed:

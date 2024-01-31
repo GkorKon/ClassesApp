@@ -22,7 +22,4 @@ public partial class ClassModel: ObservableObject
     [ObservableProperty]
     string description;
 
-    [ObservableProperty]
-    string foto;
-
 }

@@ -7,7 +7,9 @@
              xmlns:viewmodels="clr-namespace:ClassesApp.ViewModels"
              x:DataType="viewmodels:ClassViewModel"
              
-             Title="My Classes">
+             Title="My Classes"
+             
+             BackgroundColor="LightBlue">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" 
@@ -28,9 +30,9 @@
                         >
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ClassModel">
-                    
+
                     <SwipeView>
-                        
+
                         <SwipeView.RightItems>
                             <SwipeItemView>
                                 <Button Text="Delete"
@@ -38,36 +40,27 @@
                                         Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"/>
                             </SwipeItemView>
                         </SwipeView.RightItems>
-                        
+
                         <Border Margin="5">
-                            <Grid ColumnDefinitions="45,Auto,*,45">
+                            <Grid ColumnDefinitions="45,*,45">
                                 <Label Text="{Binding Id}"
                                        HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center"
                                        Grid.Column="0"
-                                       BackgroundColor="LightGoldenrodYellow"
-                                       Margin="5"/>
-                                <Label Text="{Binding Foto}"
-                                       HorizontalTextAlignment="Center"
-                                       VerticalTextAlignment="Center"
-                                       Grid.Column="1"
-                                       BackgroundColor="PaleVioletRed"
                                        Margin="5"/>
                                 <Label Text="{Binding Name}"
                                        LineBreakMode="WordWrap"
                                        HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center"
-                                       Grid.Column="2"
+                                       Grid.Column="1"
                                        FontAttributes="Bold"
                                        FontSize="15"
-                                       BackgroundColor="Brown"
                                        Margin="5"/>
                                 <Label Text="{Binding Description}"
                                        HorizontalTextAlignment="End"
                                        VerticalTextAlignment="Center"
-                                       Grid.Column="3"
+                                       Grid.Column="2"
                                        FontSize="20"
-                                       BackgroundColor="BlueViolet"
                                        Margin="5"/>
                             </Grid>
                             <Border.StrokeShape>
@@ -78,6 +71,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        
     </VerticalStackLayout>
 </ContentPage>
+    

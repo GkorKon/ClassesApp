@@ -27,6 +27,8 @@ namespace ClassesApp
             bool firstTime = Db.Database.EnsureCreated();
             Debug.WriteLine($"FIRSTTIME={firstTime}");
 
+            
+
             Db.Dispose();
             return builder.Build();
         }

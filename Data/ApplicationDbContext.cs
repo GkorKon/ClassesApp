@@ -14,7 +14,6 @@ public class ApplicationDbContext: DbContext
     //database tables
     public DbSet<ClassModel> Classes { get; set; }
 
-
     public string DBPath { get; private set; }
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
